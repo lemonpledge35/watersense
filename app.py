@@ -18,7 +18,7 @@ def home():
     elif value == 0:
         text = True
     if request.method == 'GET':
-        return render_template('home.html',value = text)
+        return render_template('home.html',water_detected = text)
     
 
 

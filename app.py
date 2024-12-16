@@ -2,7 +2,7 @@ import numpy as np
 from flask import Flask, render_template, request
 import datetime
 import time
-from read import reand_pin
+from read import read_pin
 import glob
 
 

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attic Water Sensor</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            background: linear-gradient(to bottom, #a2d9ff, #f4f4f9);
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 50px;
+            font-size: 2.5em;
+            color: #005f99;
+        }
+        .status {
+            font-size: 2em;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 50px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .on {
+            background-color: #ff6666;
+            color: white;
+        }
+        .off {
+            background-color: #66b3ff;
+            color: white;
+        }
+        .icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+        }
+        .icon.on {
+            color: #ff6666;
+        }
+        .icon.off {
+            color: #66b3ff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Attic Condensate Pan Monitor</h1>
+    <div class="icon" id="icon">💧</div>
+    <div id="status" class="status off">No Water Detected</div>
+
+    <script>
+        // Simulated variable: Replace this with your dynamic data source
+        let waterDetected = {{value}}; // Change to true for "Water Detected"
+
+        const statusDiv = document.getElementById('status');
+        const iconDiv = document.getElementById('icon');
+
+        function updateStatus() {
+            if (waterDetected) {
+                statusDiv.textContent = "Water Detected";
+                statusDiv.className = "status on";
+                iconDiv.textContent = "🚨";
+                iconDiv.className = "icon on";
+            } else {
+                statusDiv.textContent = "No Water Detected";
+                statusDiv.className = "status off";
+                iconDiv.textContent = "💧";
+                iconDiv.className = "icon off";
+            }
+        }
+        //
+        // Initial status update
+        //updateStatus();
+
+        // Example: Simulate a change in the variable after 5 seconds
+        //setTimeout(() => {
+        //    waterDetected = true; // Simulate water detection
+        //    updateStatus();
+        //}, 5000);
+    </script>
+</body>
+</html>

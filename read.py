@@ -18,22 +18,21 @@ def read_pin(pin_number):
 
 
 
-if __name__ == "__main__"
+if __name__ == "__main__":
+    INPUT_PIN = 11
 
-INPUT_PIN = 11
+        GPIO.setmode(GPIO.BOARD)
+        GPIO.setup(INPUT_PIN, GPIO.IN)
+        try:
+            while True:
 
-    GPIO.setmode(GPIO.BOARD)
-    GPIO.setup(INPUT_PIN, GPIO.IN)
-    try:
-        while True:
-
-            state = GPIO.input(INPUT_PIN)
-            if state == GPIO.HIGH:
-                print("Pin is high")
-            else:
-                print("Pin is low")
-            time.sleep(1)
-    except KeyboardInterrupt:
-        print("Exciting")
-    finally:
-        GPIO.cleanup()
+                state = GPIO.input(INPUT_PIN)
+                if state == GPIO.HIGH:
+                    print("Pin is high")
+                else:
+                    print("Pin is low")
+                time.sleep(1)
+        except KeyboardInterrupt:
+            print("Exciting")
+        finally:
+            GPIO.cleanup()

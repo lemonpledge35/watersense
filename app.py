@@ -13,9 +13,9 @@ app = Flask(__name__)
 def home():
     value = read_pin(11)
     if value == 1:
-        text = "false"
+        text = False
     elif value == 0:
-        text = 'true'
+        text = True
     if request.method == 'GET':
         return render_template('home.html',value = text)
     

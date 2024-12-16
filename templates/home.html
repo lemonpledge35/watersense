@@ -53,7 +53,7 @@
 
     <script>
         // Simulated variable: Replace this with your dynamic data source
-        const waterDetected = {{value}}; // Change to true for "Water Detected"
+        const waterDetected = {{value | tojson}}; // Change to true for "Water Detected"
 
         const statusDiv = document.getElementById('status');
         const iconDiv = document.getElementById('icon');

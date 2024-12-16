@@ -52,8 +52,8 @@
     <div id="status" class="status off">No Water Detected</div>
 
     <script>
-        // Simulated variable: Replace this with your dynamic data source
-        const waterDetected = {{value | tojson}}; // Change to true for "Water Detected"
+        // Get waterDetected status from Flask (set dynamically via Jinja2)
+        const waterDetected = {{ water_detected | tojson }};
 
         const statusDiv = document.getElementById('status');
         const iconDiv = document.getElementById('icon');
@@ -71,15 +71,9 @@
                 iconDiv.className = "icon off";
             }
         }
-        //
-        // Initial status update
-        //updateStatus();
 
-        // Example: Simulate a change in the variable after 5 seconds
-        //setTimeout(() => {
-        //    waterDetected = true; // Simulate water detection
-        //    updateStatus();
-        //}, 5000);
+        // Initial status update
+        updateStatus();
     </script>
 </body>
 </html>

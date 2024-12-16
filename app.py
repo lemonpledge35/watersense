@@ -12,6 +12,7 @@ app = Flask(__name__)
 @app.route("/", methods = ['GET','POST'])
 def home():
     value = read_pin(11)
+    print(value)
     if value == 1:
         text = False
     elif value == 0:

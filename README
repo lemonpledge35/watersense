@@ -1,4 +1,4 @@
-This is a project to run a server via flask that collects data from a Tilt hydrometer, logs it into a brew file, and displays it on a webpage on the local server. If the tilt is not in water, too far, or dead, the read will time out at 5 seconds and give values of 0 for temperature and gravity.
+This is a project to run a server via flask that reads a single Seeed water sensor on pin 11 and says weather or not water is on the sensor
 
 Raspberry pi password: pennypoodle
 
